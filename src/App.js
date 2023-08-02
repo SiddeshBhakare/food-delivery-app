@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header"; // Default Import
+import { Title } from "./components/Header"; // Named Import
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+
+import { useState } from "react";
 
 function App() {
+  // const searchText = "Search";
+
+  const [searchText, setSearchText] = useState("kfc");
+
+  const [searchClick, setSearchClick] = useState("True");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
   );
 }
 
 export default App;
+
+//   return (
+//     <>
+//       <div className="search-container">
+//         <input
+//           type="text"
+//           className="search-input"
+//           placeholder="search"
+//           value={searchText}
+//           onChange={(e) => {
+//             setSearchText(e.target.value);
+//             //whatever you write in the input
+//           }}
+//         ></input>
+
+//         <button className="search-btn">{searchText}</button>
+
+//         <h1>{searchClick}</h1>
+
+//         <button
+//           onClick={() => {
+//             if (searchClick === "True") setSearchClick("False");
+//             else setSearchClick("True");
+//           }}
+//         >
+//           Click Me
+//         </button>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;
